@@ -411,11 +411,11 @@
   <script type="text/babel">
     const{useState,useEffect,useRef,useCallback}=React;
     // ═══ CONFIGURA QUI IL TUO GITHUB ═══
-    // Sostituisci TUO-USERNAME e TUO-REPO con i tuoi dati GitHub
     const GITHUB_USER = 'DaveC0de';
     const GITHUB_REPO = 'contexto-overlay';
-    const TXT_URL = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/leaderboard.txt`;
-    const REFRESH_MS=30000, MAX_PLAYERS=15, CELEB_DUR=5500, SKEY='lb_prev';
+    // Usa GitHub API (no cache!) invece di raw.githubusercontent che cachea fino a 5+ minuti
+    const TXT_URL = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/leaderboard.txt`;
+    const REFRESH_MS=60000, MAX_PLAYERS=15, CELEB_DUR=5500, SKEY='lb_prev';
 
     // ── Audio context for celebration sound ──
     function playFirstPlaceSound(){
@@ -464,9 +464,16 @@
     async function resolveAll(ps){const m={};await Promise.all(ps.map(async p=>{m[p.name]=await resolveAv(p.name)}));return m}
 
     function fetchLB(){
-      return fetch(TXT_URL+'?t='+Date.now(),{cache:'no-store'})
-        .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.text()})
-        .then(t=>parseLB(t));
+      return fetch(TXT_URL,{
+        headers:{'Accept':'application/vnd.github.v3+json'},
+        cache:'no-store'
+      })
+        .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
+        .then(json=>{
+          // GitHub API returns content as base64
+          const text=atob(json.content);
+          return parseLB(text);
+        });
     }
     function parseLB(t){
       return t.split(/\r?\n/).map(l=>l.trim()).filter(l=>l&&!l.startsWith('#'))
