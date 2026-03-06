@@ -2,3 +2,4 @@
 # Modifica questo file direttamente da GitHub per aggiornare la classifica!
 
 JaskullTV|0
+thetalisman_pisdi1|1
