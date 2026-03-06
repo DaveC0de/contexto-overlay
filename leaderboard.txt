@@ -3,9 +3,9 @@
 
 JaskullTV|12
 Wirtual|9
-Martina|8
-Giulia|7
+Martina|200
+Giulia|400
 Fede|6
-Nico|10
+Nico|30
 Andre|4
 Simo|3
