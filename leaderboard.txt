@@ -6,6 +6,6 @@ Wirtual|9
 Martina|8
 Giulia|7
 Fede|6
-Nico|5
+Nico|10
 Andre|4
 Simo|3
