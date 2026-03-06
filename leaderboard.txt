@@ -1,11 +1,4 @@
 # Formato: Nome|Punti
 # Modifica questo file direttamente da GitHub per aggiornare la classifica!
 
-JaskullTV|400
-Wirtual|9
-Martina|200
-Giulia|400
-Fede|6
-Nico|30
-Andre|4
-Simo|3
+JaskullTV|0
