@@ -415,7 +415,7 @@
     const GITHUB_REPO = 'contexto-overlay';
     // Usa GitHub API (no cache!) invece di raw.githubusercontent che cachea fino a 5+ minuti
     const TXT_URL = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/leaderboard.txt`;
-    const REFRESH_MS=60000, MAX_PLAYERS=15, CELEB_DUR=5500, SKEY='lb_prev';
+    const REFRESH_MS=300000, MAX_PLAYERS=15, CELEB_DUR=5500, SKEY='lb_prev';
 
     // ── Audio context for celebration sound ──
     function playFirstPlaceSound(){
