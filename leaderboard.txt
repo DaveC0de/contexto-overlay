@@ -1,8 +1,7 @@
 # Formato: Nome|Punti
 # Modifica questo file direttamente da GitHub per aggiornare la classifica!
 
-JaskullTV|3
-thetalisman_pisdi1|1
-Mikey8_|0
-uanm_boxi33|5
-ekxghost|2
+bb_oo_nn_nn_yy|1
+nnorth_81|1
+g4bry_tm|2
+porcodeio|1
