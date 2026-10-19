@@ -1,7 +1,7 @@
 # Formato: Nome|Punti
 # Modifica questo file direttamente da GitHub per aggiornare la classifica!
 
-bb_oo_nn_nn_yy|1
+bb_oo_nn_nn_yy|2
 nnorth_81|1
 g4bry_tm|2
 porcodeio|2
